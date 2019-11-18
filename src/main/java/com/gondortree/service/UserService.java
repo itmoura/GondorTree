@@ -9,5 +9,7 @@ import java.util.List;
  */
 
 public interface UserService {
-    public int create(User user);
+    public boolean saveOrUpdate(User user);
+    public List<User> list();
+    public long login(User user);
 }

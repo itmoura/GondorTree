@@ -19,8 +19,18 @@ public class UserServiceImpl implements UserService {
     private UserDAO userDAO;
 
     @Override
-    public int create(User user) {
-        return userDAO.create(user);
+    public boolean saveOrUpdate(User user) {
+        return userDAO.saveOrUpdate(user);
+    }
+
+    @Override
+    public List<User> list() {
+        return userDAO.list();
+    }
+
+    @Override
+    public long login(User user) {
+        return userDAO.login(user);
     }
     
 }

@@ -1,19 +1,21 @@
 package com.gondortree.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
  * @author itmoura
  */
 @Entity
-@Table(name="login")
+@Table(name="login") // RELACIONANDO COM A TABELA DO BANCO
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -25,6 +27,21 @@ public class User implements Serializable {
     
     @Column(name="password")
     private String password;
+    
+    @Column(name="last_login", columnDefinition="date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    private Date last_login;
+    
+    public User(){
+        this(new Long(0));
+    }
+    
+    public User(Long id){
+        this.id = id;
+        this.email = "";
+        this.password = "";
+        this.last_login = new Date();
+    }
 
     public Long getId() {
         return id;
@@ -32,31 +49,6 @@ public class User implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof User)) {
-            return false;
-        }
-        User other = (User) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "com.gondortree.model.User[ id=" + id + " ]";
     }
 
     /**
