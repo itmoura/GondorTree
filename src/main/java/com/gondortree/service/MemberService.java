@@ -12,8 +12,12 @@ import java.util.List;
  *
  * @author itmoura
  */
-public interface MemberService {
+public interface MemberService extends GenericService {
     public List<Member> list();
-    public boolean saveOrUpdate(Member member);
-    public boolean delete(Member member);
+    public boolean register(Member member);
+    public boolean edit(Member member);
+    
+    public Member login(Member m);
+
+    public Member findByID(Long id);
 }

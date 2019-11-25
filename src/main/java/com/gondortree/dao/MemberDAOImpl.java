@@ -19,12 +19,6 @@ public class MemberDAOImpl implements MemberDAO {
     @Autowired(required = true)
     private SessionFactory sessionFactory;
     
-    public boolean saveOrUpdate(Member member) {
-        Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(member); // SALVANDO DADOS
-        return true;
-    }
-
     @Override
     public List<Member> list() {
         Session session = sessionFactory.getCurrentSession();
@@ -32,13 +26,50 @@ public class MemberDAOImpl implements MemberDAO {
     }
 
     @Override
-    public boolean delete(Member member) {
+    public boolean register(Member member) {
         Session session = sessionFactory.getCurrentSession();
-        try {
-            session.delete(member); // EXLUINDO DADOS
-        } catch (Exception e) {
+        List<Member> l = session.createQuery("from Member").list();
+        for (Member ref : l) {
+            // VERIFICAR EMAIL E SENHA ESTÃO CORRETOS
+            if(ref.getEmail().equals(member.getEmail())){
                 return false;
+            }
         }
+        session.save(member);
+        return false;
+    }
+
+    @Override
+    public boolean edit(Member member) {
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(member); // ATUALIZANDO DADOS
         return true;
+    }
+    
+    @Override
+    public Member login(Member member) {
+        Session session = sessionFactory.getCurrentSession();
+        List<Member> l = session.createQuery("from Member").list();
+        for (Member ref : l) {
+            // VERIFICAR EMAIL E SENHA ESTÃO CORRETOS
+            if(ref.getEmail().equals(member.getEmail()) && ref.getPassword().equals(member.getPassword())){ 
+                Member mdb = l.get(0);
+                return mdb;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Member findByID(Long id) {
+        Session session = sessionFactory.getCurrentSession();
+        List<Member> l = session.createQuery("from Member where id = "+id).list();
+        for (Member ref : l) {
+            if(ref.getId().longValue() == id){ 
+                Member mdbS = l.get(0);
+                return mdbS;
+            }
+        }
+        return null;
     }
 }

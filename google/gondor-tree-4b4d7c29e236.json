@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gondor-tree",
+  "private_key_id": "4b4d7c29e23630b19d17c0026e009ec150568567",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC24qNn4fq6Yl2t\nDTk2mMhh9Y3tONxALhqca78A7l+dce4YbeKY6HuSlvzAvy0nK+1mJYVtUrZILVfY\nP4mIXn9mIH5tUgTo7+1gGtfDPScnB0IhUQvSSzC1XxgFHT6Jv/S7TvCtiFFqLCLA\nqOIdzfi81duao9DhXIaq8iTSqH9GqtBxYO8KIQaNcGrK/v4KfAgQnjcuojgg/Y38\nMJCvfX3seviM4kGuZYadP+atqu7CXK3+FotOi1cJ93yI/TZAwG+nhAEqoWcGvkiH\nDZVUFAwtlp668Gf4+V69ebuuC9cvmFFrVHBRfSxfH+wL497KxTG0/6VfAaR/t0pI\ntV3kgrzNAgMBAAECggEABeLD4eOKfIYO1vNkv06J941nB4kLr5hg016Qxu5JmESy\n3QANMsWJgW6jMSVF89k+46Tfa8BTUZAiBKdTHTJ2y6xN+MDuUnNFcrWt4FeDmmIz\nYcBTvIiwvidJgEqii11x6ABSxx3PU4ktBrimayztJE+GqNKqWmb3Ydgb0Q9c+Gdz\ndkttK7BvSJPSl7zL2pdDWW0tNcbjCNP+67Li3/aNS76LtMDD2mLZkQsuZjaQZ4MB\nqDOOHEArTK8nAEpQ0XovWECwGC6iqZ8Iy3s5kk9S3OYVaJnnloKvnaXiiGsVGOvH\nW4w5STkUiGlptNHQRU723z96j4PtU3s64R9FAHHZIQKBgQDpqGxXwPYAOl6W6lzq\neuOlh9RLEpUcDsF0C/SxD6Urw8zc/pVVTb9IEIb6Jyt90LlpUeq46MSRoHgPsoHx\nljxp2uaozESLiESNkYVn3DnNBnHmprFarzzZLdF6LQ44rDiW7i5g5L/a1ntC2O1m\nh4jdYTuHgLy3JEQKp0ywO5q5oQKBgQDIX2HMHgUNBkzwHIKWBqP6pBYOGZpxSfRz\nnnohLRX6XFXdq7YTsoxNT0FWk3IqsrCliMlYXKpb8DYxOnSYyCpSmiHJkxW/IFfc\nF6YSlpYAGRVhQtQ5U6xWbWqnYMuRV/nbeMGeAck4nBLyCexAGErrit3OZRL/H6hr\nMQP99j1rrQKBgQCjiTLTNIW44SGFBOElZ/9ewrOOG6JrMdSqURfguS+EcxU2c6S3\nQKQpXw/pk3K4K1cp5KCg7KFvv11otyqFmP4NpJ0d9WHgOu6oGvrBF30JB4K+yVqG\nOvIemxfrKA+1EKzGzkt9m3zAQK+iuMtnoGLldwFANJVgpSxOPIvLKNyBIQKBgEbW\nOZvQzRZSsOZ+HchuJpCYa9emQ4xjidFKKIEMEGYHOK/6YY9LIwC90SqLS+Q+cebD\nmfLsJ6oDHRWARfIxaYz0QpehsSF1jLoZfjO6GuOD+qP83Uw7AYU4f2kW9kC26nUl\nlsWGeh3SR3xb97KdI/dri4jJANNC3OawWGnzILmtAoGAek3OGEQwB4KKplStqPWO\nJCeD0XwFjVzNPm5QcLI6omVJCRWNDPhiySXyRcci9mdZy6UrpE80rtGM7eKYYKYL\nLJNIHJBMqnJjgJSTsH3M+AlC34bKizxyYRfxnHlmzh98Rsd19+b8p83ttkkSldnh\nfPa1EOilIwFgoUb/IznrhLk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "gondor@gondor-tree.iam.gserviceaccount.com",
+  "client_id": "109051736915150472221",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gondor%40gondor-tree.iam.gserviceaccount.com"
+}

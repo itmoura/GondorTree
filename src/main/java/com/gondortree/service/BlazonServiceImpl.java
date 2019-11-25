@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.gondortree.service;
 
 import com.gondortree.dao.BlazonDAO;
 import com.gondortree.model.Blazon;
 import java.util.List;
+import org.springframework.stereotype.Service;
+
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  *
@@ -18,24 +14,28 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Transactional
-public class BlazonServiceImpl implements BlazonService{
+public class BlazonServiceImpl extends GenericServiceImpl implements BlazonService {
     
     @Autowired
-    private BlazonDAO blazonDAO;
-    
-    @Override
-    public boolean saveOrUpdate(Blazon blazon) {
-        return blazonDAO.saveOrUpdate(blazon);
-    }
+    private BlazonDAO dao;
 
     @Override
     public List<Blazon> list() {
-        return blazonDAO.list();
+        return dao.list();
     }
 
     @Override
-    public boolean delete(Blazon blazon) {
-        return blazonDAO.delete(blazon);
+    public boolean register(Blazon blazon) {
+        return dao.register(blazon);
+    }
+
+    @Override
+    public boolean edit(Blazon blazon) {
+        return dao.edit(blazon);
     }
     
+    @Override
+    public boolean delete(Blazon blazon) {
+        return dao.delete(blazon);
+    }
 }

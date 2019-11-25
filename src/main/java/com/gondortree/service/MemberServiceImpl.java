@@ -18,23 +18,33 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Transactional
-public class MemberServiceImpl implements MemberService {
+public class MemberServiceImpl extends GenericServiceImpl implements MemberService {
     
     @Autowired
-    private MemberDAO memberDAO;
-    
-    @Override
-    public boolean saveOrUpdate(Member member) {
-        return memberDAO.saveOrUpdate(member);
-    }
+    private MemberDAO dao;
 
     @Override
     public List<Member> list() {
-        return memberDAO.list();
+        return dao.list();
     }
 
     @Override
-    public boolean delete(Member member) {
-        return memberDAO.delete(member);
+    public boolean register(Member member) {
+        return dao.register(member);
+    }
+
+    @Override
+    public boolean edit(Member member) {
+        return dao.edit(member);
+    }
+    
+    @Override
+    public Member login(Member member) {
+        return dao.login(member);
+    }
+
+    @Override
+    public Member findByID(Long id) {
+        return dao.findByID(id);
     }
 }

@@ -19,28 +19,34 @@ public class BlazonDAOImpl implements BlazonDAO {
     @Autowired(required = true)
     private SessionFactory sessionFactory;
     
-    public boolean saveOrUpdate(Blazon blazon) {
+    @Override
+    public List<Blazon> list() {
         Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(blazon); // SALVANDO DADOS
+        return session.createQuery("from Blazon").list(); // LISTANDO DADOS
+    }
+
+    @Override
+    public boolean register(Blazon blazon) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(blazon);
         return true;
     }
 
     @Override
-    public List<Blazon> list() {
+    public boolean edit(Blazon blazon) {
         Session session = sessionFactory.getCurrentSession();
-        return session.createQuery("from Blazon").list(); // BUSCANDO DADOS DE BLAZON
+        session.update(blazon); // ATUALIZANDO DADOS
+        return true;
     }
-
+    
     @Override
     public boolean delete(Blazon blazon) {
         Session session = sessionFactory.getCurrentSession();
         try {
-            session.delete(blazon);  // DELETANDO DADOS
+            session.delete(blazon); // DELETANDO DADOS
         } catch (Exception e) {
                 return false;
         }
         return true;
     }
-    
-    
 }

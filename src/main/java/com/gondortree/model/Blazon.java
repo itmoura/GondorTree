@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -13,7 +15,7 @@ import javax.persistence.Table;
  * @author itmoura
  */
 @Entity
-@Table(name="blazon") // RELACIONANDO COM A TABELA DO BANCO
+@Table(name="family") // RELACIONANDO COM A TABELA DO BANCO
 public class Blazon implements Serializable {    
     private static final long serialVersionUID = 1L;
     
@@ -27,6 +29,10 @@ public class Blazon implements Serializable {
     @Column(name="image")
     private String image;
     
+    @ManyToOne
+    @JoinColumn(name = "create_id",columnDefinition="int")
+    private Member createId;
+    
     public Blazon(){
         this(new Long(0));
     }
@@ -34,7 +40,8 @@ public class Blazon implements Serializable {
     public Blazon(Long id){
         this.id = id;
         this.name = "";
-        this.image = "";
+        this.image = "logo.jpg";
+        this.createId = null;
     }
 
     public Long getId() {
@@ -59,8 +66,15 @@ public class Blazon implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
+    }   
+
+    public Member getCreateId() {
+        return createId;
     }
-    
+
+    public void setCreateId(Member createId) {
+        this.createId = createId;
+    }
     
     
 }

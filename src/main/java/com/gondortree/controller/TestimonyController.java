@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 
 @Controller
-@RequestMapping("testimony")
+@RequestMapping("testimony.htm")
 public class TestimonyController {
     
     @Autowired

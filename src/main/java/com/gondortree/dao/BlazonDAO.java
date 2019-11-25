@@ -9,6 +9,7 @@ import java.util.List;
  */
 public interface BlazonDAO {
     public List<Blazon> list();
-    public boolean saveOrUpdate(Blazon blazon);
+    public boolean register(Blazon blazon);
+    public boolean edit(Blazon blazon);
     public boolean delete(Blazon blazon);
 }
